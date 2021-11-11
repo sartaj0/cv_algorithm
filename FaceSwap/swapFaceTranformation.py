@@ -84,9 +84,9 @@ def method1(image1, gray1, image2, gray2, detector, predictor):
 
 if __name__ == '__main__':
 
-	width = 400
+	width = 500
 	image1 = cv2.imread("images/rock.jpg")
-	image2 = cv2.imread("images/ironman.jpg")
+	image2 = cv2.imread("images/will_smith.jpg")
 
 	image1 = resize(image1, width=width)
 	image2 = resize(image2, width=width)
