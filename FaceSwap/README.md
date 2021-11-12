@@ -38,6 +38,7 @@ By using 68 keypoint calculate the projective transformation and apply it on the
 ### Crop and Paste face image on the body image
 
 #### Crop the image
+By using the 68 landmark points crop the faces
 <p float="left">
 	<img src="./images/croped_face.jpg" width="200" />
 	<img src="./images/croped_body.jpg" width="200" /> 
@@ -52,4 +53,4 @@ To match the body tone with the face we are using `cv2.seamlessClone`
 
 
 ## References:
-- [Satya Malik / learnopencv](https://learnopencv.com/face-swap-using-opencv-c-python/)
+- [Satya Mallick / learnopencv](https://learnopencv.com/face-swap-using-opencv-c-python/)
