@@ -39,8 +39,8 @@ def drawKeypoints(image, keypoints, label="drawedKeypoints"):
 	drawedKeypoints = image.copy()
 	for point in keypoints:
 		drawedKeypoints = cv2.circle(drawedKeypoints, point, 3, (0, 0, 0), -1)
-	# cv2.imshow(label, drawedKeypoints)
-	cv2.imwrite(label+".jpg", drawedKeypoints)
+	cv2.imshow(label, drawedKeypoints)
+	# cv2.imwrite(label+".jpg", drawedKeypoints)
 
 
 
@@ -84,15 +84,15 @@ def swap(image1, image2, detector, predictor):
 	center = (int((x + x + w) / 2), int((y + y + h) / 2))
 	final = cv2.seamlessClone(final2, image2, mask, center, cv2.NORMAL_CLONE)
 
-	drawKeypoints(image1, keypoints1, label="kps1")
-	drawKeypoints(image2, keypoints2, label="kps2")
+	# drawKeypoints(image1, keypoints1, label="kps1")
+	# drawKeypoints(image2, keypoints2, label="kps2")
 
-	cv2.imwrite("transformed_face.jpg", image1_warped)
+	# cv2.imwrite("transformed_face.jpg", image1_warped)
 
-	cv2.imwrite("croped_face.jpg", face1)
-	cv2.imwrite("cropped_body.jpg", body)
+	# cv2.imwrite("croped_face.jpg", face1)
+	# cv2.imwrite("cropped_body.jpg", body)
 
-	cv2.imwrite("pasted_image.jpg", final2)
+	# cv2.imwrite("pasted_image.jpg", final2)
 
 	return final
 
