@@ -33,7 +33,7 @@ Extract 68 facial landmark using dlib shape predictor
 
 ### Compute and Apply Geometric Transformation of face image
 By using 68 keypoint calculate the projective transformation and apply it on the face image
-<img src="./images/transformed_face.jpg" width="200" />
+<p float="left"><img src="./images/transformed_face.jpg" width="200" /></p>
 
 ### Crop and Paste face image on the body image
 
@@ -44,11 +44,11 @@ By using 68 keypoint calculate the projective transformation and apply it on the
 </p>
 
 #### Paste face image on the body image
-<img src="./images/pasted_image.jpg" width="200" />
+<p float="left"><img src="./images/pasted_image.jpg" width="200" /></p>
 
 ### Apply Blending
 To match the body tone with the face we are using `cv2.seamlessClone`
-<img src="./images/will_rock.jpg" width="200" />
+<p float="left"><img src="./images/will_rock.jpg" width="200" /></p>
 
 
 ## References:
