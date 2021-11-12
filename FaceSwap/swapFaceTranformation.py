@@ -39,7 +39,8 @@ def drawKeypoints(image, keypoints, label="drawedKeypoints"):
 	drawedKeypoints = image.copy()
 	for point in keypoints:
 		drawedKeypoints = cv2.circle(drawedKeypoints, point, 3, (0, 0, 0), -1)
-	cv2.imshow(label, drawedKeypoints)
+	# cv2.imshow(label, drawedKeypoints)
+	cv2.imwrite(label+".jpg", drawedKeypoints)
 
 
 
@@ -54,7 +55,10 @@ def tranform(image1, image2, kps1, kps2):
 	return image1_warped
 	
 
-def method1(image1, gray1, image2, gray2, detector, predictor):
+def swap(image1, image2, detector, predictor):
+	gray1 = cv2.cvtColor(image1, cv2.COLOR_BGR2GRAY)
+	gray2 = cv2.cvtColor(image2, cv2.COLOR_BGR2GRAY)
+
 	keypoints1 = extractKeypoint(gray1, detector, predictor)
 	keypoints2 = extractKeypoint(gray2, detector, predictor)
 
@@ -80,24 +84,33 @@ def method1(image1, gray1, image2, gray2, detector, predictor):
 	center = (int((x + x + w) / 2), int((y + y + h) / 2))
 	final = cv2.seamlessClone(final2, image2, mask, center, cv2.NORMAL_CLONE)
 
+	drawKeypoints(image1, keypoints1, label="kps1")
+	drawKeypoints(image2, keypoints2, label="kps2")
+
+	cv2.imwrite("transformed_face.jpg", image1_warped)
+
+	cv2.imwrite("croped_face.jpg", face1)
+	cv2.imwrite("cropped_body.jpg", body)
+
+	cv2.imwrite("pasted_image.jpg", final2)
+
 	return final
 
 if __name__ == '__main__':
 
 	width = 500
+	pathShapePredictor = r"E:\Models\Dlib\shape_predictor_68_face_landmarks.dat"
+	
 	image1 = cv2.imread("images/rock.jpg")
 	image2 = cv2.imread("images/will_smith.jpg")
 
 	image1 = resize(image1, width=width)
 	image2 = resize(image2, width=width)
 
-	gray1 = cv2.cvtColor(image1, cv2.COLOR_BGR2GRAY)
-	gray2 = cv2.cvtColor(image2, cv2.COLOR_BGR2GRAY)
-
 	detector = dlib.get_frontal_face_detector()
-	predictor = dlib.shape_predictor(r"E:\Models\Dlib\shape_predictor_68_face_landmarks.dat")
+	predictor = dlib.shape_predictor(pathShapePredictor)
 
-	final = method1(image1, gray1, image2, gray2, detector, predictor)
+	final = swap(image1, image2, detector, predictor)
 
 	cv2.imshow("final", final)
 	cv2.imwrite("final.jpg", final)
