@@ -15,15 +15,40 @@
 
 ## Steps:
 - Extract Landmark
-- Compute and Apply Projective Tranformation on face image
-- Crop and Paste face image on the second image
+- Compute and Apply Projective Transformation of face image
+- Crop and Paste face image on the body image
 - Apply Blending
 
+<p float="left">
+	<img src="./images/rock.jpg" width="200" />
+	<img src="./images/will_smith.jpg" width="200" /> 
+</p>
 
 ### Extract Landmark
+Extract 68 facial landmark using dlib shape predictor
+<p float="left">
+	<img src="./images/kps1.jpg" width="200" />
+	<img src="./images/kps2.jpg" width="200" /> 
+</p>
 
-![alt-text-1](./images/will_smith.jpg) ![alt-text-2](./images/rock.jpg)
+### Compute and Apply Geometric Transformation of face image
+By using 68 keypoint calculate the projective transformation and apply it on the face image
+<img src="./images/transformed_face.jpg" width="200" />
 
+### Crop and Paste face image on the body image
+
+#### Crop the image
+<p float="left">
+	<img src="./images/croped_face.jpg" width="200" />
+	<img src="./images/croped_body.jpg" width="200" /> 
+</p>
+
+#### Paste face image on the body image
+<img src="./images/pasted_image.jpg" width="200" />
+
+### Apply Blending
+To match the body tone with the face we are using `cv2.seamlessClone`
+<img src="./images/will_rock.jpg" width="200" />
 
 
 ## References:
