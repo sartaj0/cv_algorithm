@@ -9,7 +9,7 @@
 |<img src="./images/will_smith.jpg" width="200" title="failure cases"> | <img src="./images/rock.jpg"  width="200" title="failure cases"> | <img src="./images/will_rock.jpg"  width="200" title="failure cases"> |
 
 ## Dependency 
-- [Download]("http://dlib.net/files/shape_predictor_68_face_landmarks.dat.bz2") the dlib shape predictor which [68 landmark points](https://ibug.doc.ic.ac.uk/media/uploads/images/300-w/figure_1_68.jpg) on face
+- [Download](http://dlib.net/files/shape_predictor_68_face_landmarks.dat.bz2) the dlib shape predictor which [68 landmark points](https://ibug.doc.ic.ac.uk/media/uploads/images/300-w/figure_1_68.jpg) on face
 - Requirements: skimage, opencv-python, Pillow, dlib <br> `pip3 install Pillow opencv-python dlib scikit-image`
 
 
