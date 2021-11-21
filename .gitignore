@@ -3,3 +3,7 @@ __pycache__/
 
 CameraProcessing
 ImageStitching
+
+
+# file copies
+readVideoSubProcess_copy.py

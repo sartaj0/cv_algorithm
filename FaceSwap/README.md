@@ -50,7 +50,3 @@ By using the 68 landmark points crop the faces
 ### Apply Blending
 To match the body tone with the face we are using `cv2.seamlessClone`
 <p float="left"><img src="./images/will_rock.jpg" width="200" /></p>
-
-
-## References:
-- [Satya Mallick / learnopencv](https://learnopencv.com/face-swap-using-opencv-c-python/)
