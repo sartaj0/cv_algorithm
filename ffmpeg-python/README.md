@@ -6,4 +6,4 @@ Download the latest ffmpeg library for [windows](https://www.gyan.dev/ffmpeg/bui
 
 ## How to use
 After download extract the zip file inside bin folder copy the path of ffmpeg.exe and ffprobe.exe
-Run the file [readVideoSubProcess.py](./readVideoSubProcess.py) or call the class the [VideoCapture](./readVideoSubProcess.py) pass the path of ffmpeg, ffprobe and src location[video]
+Run the file [readVideoSubProcess.py](./readVideoSubProcess.py) or call the class [VideoCapture](./readVideoSubProcess.py) pass the path of ffmpeg, ffprobe and src location[video]
