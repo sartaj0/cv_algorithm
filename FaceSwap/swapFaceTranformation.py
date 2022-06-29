@@ -101,8 +101,8 @@ if __name__ == '__main__':
 	width = 500
 	pathShapePredictor = r"E:\Models\Dlib\shape_predictor_68_face_landmarks.dat"
 	
-	image1 = cv2.imread("images/rock.jpg")
-	image2 = cv2.imread("images/will_smith.jpg")
+	image1 = cv2.imread("images/image1.jpeg")
+	image2 = cv2.imread("images/image1.png")
 
 	image1 = resize(image1, width=width)
 	image2 = resize(image2, width=width)

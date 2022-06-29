@@ -16,6 +16,7 @@ class VideoCapture():
 			'-f', 'image2pipe',
 			'-pix_fmt', 'rgb24',
 			'-filter:v', 'fps=1',
+			# '-vf', f'scale={self.w}:{self.h}',
 			'-vcodec', 'rawvideo', '-']
 		self.pipe = subprocess.Popen(command, stdout = subprocess.PIPE, bufsize=10**8)
 
@@ -25,6 +26,7 @@ class VideoCapture():
 		ffprobe_out, err = s.communicate() 
 		w, h = ffprobe_out.decode("utf-8").split("x")
 		
+		# self.w, self.h = int(w) // 2, int(h) // 2
 		self.w, self.h = int(w), int(h)
 
 	def read(self):
@@ -46,9 +48,11 @@ if __name__ == "__main__":
 	ffmpeg_path = r"E:\Downloads\ffmpeg-2021-11-18-git-85a6b7f7b7-essentials_build\bin\ffmpeg.exe"
 	ffprobe_path = r"E:\Downloads\ffmpeg-2021-11-18-git-85a6b7f7b7-essentials_build\bin\ffprobe.exe"
 
-	src = r"E:\Videos\Testing\car.mp4"
+	# src = r"E:\Videos\Testing\horse_race.mp4"
+	src = "rtsp://mamun:123456@101.134.16.117:554/user=mamun_password=123456_channel=0_stream=0.sdp"
 	
 	cap = VideoCapture(ffmpeg_path, ffprobe_path, src)
+	# cap = cv2.VideoCapture(src)
 	while True:
 		frame = cap.read()
 		if frame is None:
